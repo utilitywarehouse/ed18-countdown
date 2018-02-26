@@ -1,0 +1,47 @@
+<html>
+<head>
+    <link rel="stylesheet" href="./flipclock.css">
+</head>
+<body>
+<style>
+    html {
+        background: black;
+    }
+    .flip-clock-divider .flip-clock-label {
+        color: aliceblue;
+    }
+    .centered {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        /* bring your own prefixes */
+        transform: translate(-50%, -50%);
+    }
+
+    .flip-clock-wrapper ul li a div div.inn {
+        color: #ff230d;
+    }
+</style>
+<div class="your-clock centered"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js" integrity="sha256-ABVkpwb9K9PxubvRrHMkk6wmWcIHUE9eBxNZLXYQ84k=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/locale/en-gb.js" integrity="sha256-tFU1H7O4obMtCeaZ6i77+4Pe5AE6cyDx8K0c8GfdM9w=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="./flipclock.min.js"></script>
+<script>
+
+    var until = moment("2018-03-17").unix() - moment().unix()
+
+    $(document).ready(() => {
+
+        document.body.style.zoom="300%"
+
+        var clock = $('.your-clock').FlipClock(until, {
+            clockFace: 'DailyCounter',
+            countdown: true
+        });
+    })
+</script>
+</body>
+</html>
